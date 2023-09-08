@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'cinti/bienesraices',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '2d131a91640c33836ccc3d20d95bc72b1bb6f485',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'cinti/bienesraices' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '2d131a91640c33836ccc3d20d95bc72b1bb6f485',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
