@@ -1,7 +1,7 @@
 <main class="contenedor seccion">
         <h1>Registrar Vendedor</h1>
 
-        <a href="/bienesraices/admin/index.php" class="boton boton-verde">volver</a>
+        <a href="/admin" class="boton boton-verde">volver</a>
 
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
@@ -11,7 +11,7 @@
         <?php endforeach; ?>
 
 
-        <form class="formulario" method="POST" action="/admin/vendedores/crear.php">
+        <form class="formulario" method="POST" action="/vendedores/crear">
             <?php include 'formulario.php'; ?>
             <input type="submit" value="Registrar Vendedor" class="boton boton-verde">
         </form>
