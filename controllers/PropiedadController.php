@@ -74,6 +74,35 @@ class PropiedadController{
 
         $errores = Propiedad::getErrores();
 
+        // Metodo POST para actualizar
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            // Asignar los atributos
+            $args = $_POST['propiedad'];
+            $propiedad->sincronizar($args);
+
+            // Validacion
+            $errores = $propiedad->validar();
+    
+            //Generar un nombre único
+            $nombreImagen = md5( uniqid(rand(), true)) . ".jpg";
+
+            // Subida de archivos
+            if($_FILES['propiedad']['tmp_name']['imagen']){
+                $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
+                $propiedad->setImagen($nombreImagen);
+            }
+    
+    
+            //Revisar que el array de errores este vacio
+            if(empty($errores)){
+                if($_FILES['propiedad']['tmp_name']['imagen']){
+                    //almacenar la imagen
+                    $image->save(CARPETA_IMAGENES . $nombreImagen);
+                }
+                $propiedad->guardar();
+            }
+    }
+
         $router->render('/propiedades/actualizar', [
             'propiedad' => $propiedad,
             'errores' => $errores,
