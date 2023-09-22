@@ -32,7 +32,7 @@
                     <td class="imagen-tabla"> <img src="/bienesraices/imagenes/<?php echo $propiedad->imagen; ?>" > </td>
                     <td>$ <?php echo $propiedad->precio; ?></td>
                     <td>
-                        <form method="POST">
+                        <form method="POST" action="/propiedades/eliminar">
                             <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>" >
                             <input type="hidden" name="tipo" value="propiedad" >
                             <input type="submit" class="boton-rojo-block" value="Eliminar" >

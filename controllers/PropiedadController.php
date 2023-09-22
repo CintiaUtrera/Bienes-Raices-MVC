@@ -25,16 +25,13 @@ class PropiedadController{
         $propiedad = new Propiedad;
         $vendedores = Vendedor::all();
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){    
         //Crea una nueva instancia 
         $propiedad  = new Propiedad($_POST['propiedad']);
 
         //SUBIDA DE ARCHIVOS
-        
         //Generar un nombre único
         $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
-
         // SETEAR la imagen
         // Realiza un resize a la imagen con intervention 
         if($_FILES['propiedad']['tmp_name']['imagen']){
@@ -42,7 +39,6 @@ class PropiedadController{
             $propiedad->setImagen($nombreImagen);
         }
         
-
         //Validar
         $errores = $propiedad->validar();
 
@@ -102,11 +98,30 @@ class PropiedadController{
                 $propiedad->guardar();
             }
     }
-
         $router->render('/propiedades/actualizar', [
             'propiedad' => $propiedad,
             'errores' => $errores,
             'vendedores' => $vendedores
         ]);
+    }
+
+    public static function eliminar(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            //validar id
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+    
+            if($id){
+                $tipo = $_POST['tipo'];
+                if(validarTipoContenido($tipo)){
+                    $propiedad = Propiedad::find($id);
+                    $propiedad->eliminar();
+                }
+    
+                $propiedad = Propiedad::find($id);
+                $propiedad->eliminar();
+            }
+            
+        }
     }
 }
