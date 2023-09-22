@@ -22,3 +22,5 @@ $router->post('/vendedores/actualizar', [VendedorController::class, 'actualizar'
 $router->post('/vendedores/eliminar', [VendedorController::class, 'eliminar']);
 
 $router->comprobarRutas(); //valida el tipo de request sea get o post
+
+?>

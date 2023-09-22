@@ -10,7 +10,7 @@
         ?>
 
         <a href="/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
-        <a href="../admin/vendedores/crear.php" class="boton boton-amarillo">Nuevo Vendedor</a>
+        <a href="/vendedores/crear" class="boton boton-amarillo">Nuevo Vendedor</a>
 
         <h2>Propiedades</h2>
 
@@ -29,7 +29,7 @@
                 <tr>
                     <td><?php echo $propiedad->id; ?></td>
                     <td><?php echo $propiedad->titulo; ?></td>
-                    <td class="imagen-tabla"> <img src="/bienesraices/imagenes/<?php echo $propiedad->imagen; ?>" > </td>
+                    <td class="imagen-tabla"> <img src="/imagenes/<?php echo $propiedad->imagen; ?>" > </td>
                     <td>$ <?php echo $propiedad->precio; ?></td>
                     <td>
                         <form method="POST" action="/propiedades/eliminar">
