@@ -1,21 +1,9 @@
-<?php
-    use App\Propiedad;
-    
-
-    if($_SERVER['SCRIPT_NAME'] === '/anuncio.php'){
-        $propiedades = Propiedad::all();
-    } else{
-        $propiedades = Propiedad::get(3);
-    }
-?>
-
-
 
 <div class="contenedor-anuncios">
     <?php foreach($propiedades as $propiedad) { ?>
             <div class="anuncio">
                 <picture>
-                    <img loading="lazy" src="/imagenes/<?php echo $propiedad->imagen; ?>" alt="anuncio">
+                    <img loading="lazy" src="/imagenes/ <?php echo $propiedad->imagen; ?>" alt="anuncio">
 
                 <div class="contenido-anuncio">
                     <h3><?php echo $propiedad->titulo; ?></h3>
@@ -44,4 +32,3 @@
             </div><!--anuncio-->
         <?php } ?>
         </div> <!--.contenedor-anuncios-->
-
