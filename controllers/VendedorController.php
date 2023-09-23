@@ -3,7 +3,7 @@ namespace Controllers;
 use MVC\Router;
 use Model\Vendedor;
 
-class VendedorController{
+class VendedorController {
     public static function crear(Router $router) {
         $errores = Vendedor::getErrores();
         $vendedor = new Vendedor;
@@ -23,8 +23,17 @@ class VendedorController{
             'vendedor' => $vendedor
         ]);
     }
-    public static function actualizar() {
-        
+    public static function actualizar(Router $router) {
+        $errores = Vendedor::getErrores();
+        $id = validarORedireccionar('/admin');
+
+        // obtener datos del vendedor
+        $vendedor = Vendedor::find($id);
+
+        $router->render('vendedores/actualizar', [
+            'errores' => $errores,
+            'vendedor' => $vendedor
+        ]);
     }
     public static function eliminar() {
         
