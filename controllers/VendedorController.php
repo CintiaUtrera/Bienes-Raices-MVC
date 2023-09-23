@@ -23,6 +23,8 @@ class VendedorController {
             'vendedor' => $vendedor
         ]);
     }
+
+
     public static function actualizar(Router $router) {
         $errores = Vendedor::getErrores();
         $id = validarORedireccionar('/admin');
@@ -46,7 +48,23 @@ class VendedorController {
             'vendedor' => $vendedor
         ]);
     }
+
+
     public static function eliminar() {
-        
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            
+            // validar el id
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+
+            if($id){
+                $tipo = $_POST['tipo'];
+                if(validarTipoContenido($tipo)){
+                    $vendedor = Vendedor::find($id);
+                    $vendedor->eliminar();
+                }
+            }
+            
+        }
     }
 }
