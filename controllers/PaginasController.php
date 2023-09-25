@@ -15,24 +15,28 @@ class PaginasController{
     'inicio' => $inicio
     ]);
 }
-public static function nosotros(Router $router){
+    public static function nosotros(Router $router){
 
-}
-public static function propiedades(Router $router){
+        $router->render('paginas/nosotros', [
+            
+            ]);
+    }
 
-}
-public static function propiedad(Router $router){
+    public static function propiedades(Router $router){
 
-}
-public static function blog(Router $router){
+    }
+    public static function propiedad(Router $router){
 
-}
-public static function entrada(Router $router){
+    }
+    public static function blog(Router $router){
 
-}
-public static function contacto(Router $router){
+    }
+    public static function entrada(Router $router){
 
-}
+    }
+    public static function contacto(Router $router){
+
+    }
 
 
 }

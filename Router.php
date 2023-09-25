@@ -41,11 +41,11 @@ class Router{
         }
 
         ob_start(); // iniciar almacenamiento en memoria durante un momento
-        include __DIR__ . "/views/$view.php";
+        include_once __DIR__ . "/views/$view.php";
 
         $contenido = ob_get_clean(); // limpia memoria
 
-        include __DIR__ . "/views/layout.php";
+        include_once __DIR__ . '/views/layout.php';
     }
 
 
