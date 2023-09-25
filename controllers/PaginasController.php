@@ -15,8 +15,8 @@ class PaginasController{
     'inicio' => $inicio
     ]);
 }
-    public static function nosotros(Router $router){
 
+    public static function nosotros(Router $router){
         $router->render('paginas/nosotros', []);
     }
 
@@ -37,7 +37,6 @@ class PaginasController{
         $router->render('paginas/propiedad', [
             'propiedad' => $propiedad,
         ]);
-    
     }
 
     public static function blog(Router $router){
@@ -45,11 +44,12 @@ class PaginasController{
     }
 
     public static function entrada(Router $router){
-
         $router->render('paginas/entrada', []);
     }
+
     public static function contacto(Router $router){
 
+        $router->render('paginas/contacto', []);
     }
 
 
