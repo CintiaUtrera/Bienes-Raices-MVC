@@ -3,7 +3,7 @@
         'name' => 'cinti/bienesraices',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '81b855d7238065e4b00f7ea85abf1d4189a4932b',
+        'reference' => 'e1f7d67739dc6a7ae1dc6d0d3650090c11d25fec',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'cinti/bienesraices' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '81b855d7238065e4b00f7ea85abf1d4189a4932b',
+            'reference' => 'e1f7d67739dc6a7ae1dc6d0d3650090c11d25fec',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
