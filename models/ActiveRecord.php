@@ -84,7 +84,7 @@ class ActiveRecord{
         $query = "DELETE FROM " . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
         if($resultado){
-            header('location: /admin/index.php?resultado=3');
+            header('location: /admin?resultado=3');
         }
     }
 
