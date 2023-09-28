@@ -15,10 +15,15 @@ class LoginController{
 
             if(empty($errores)){
                 //verificar si el usuario exite
-
+                $resultado = $auth->existeUsuario();
+                if(!$resultado){
+                    $errores = Admin::getErrores();
+                }else{
                 //verificar el password
 
                 // autenticar el usuario
+                }
+                
             }
         }
 
