@@ -51,7 +51,7 @@ class ActiveRecord{
         // mensaje de exito
         if ($resultado){
             //Redireccionar al Usuario
-            header("Location: ../index.php?resultado=1");
+            header("Location: /admin?resultado=1");
             }
         
     }
@@ -73,7 +73,7 @@ class ActiveRecord{
         if ($resultado){
             $this->borrarImagen();
             //Redireccionar al Usuario
-            header('Location: ../index.php?resultado=2');
+            header('Location: /admin?resultado=2');
             }
         
     }
@@ -84,7 +84,7 @@ class ActiveRecord{
         $query = "DELETE FROM " . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
         if($resultado){
-            header('location:/bienesraices/admin/index.php?resultado=3');
+            header('location: /admin/index.php?resultado=3');
         }
     }
 

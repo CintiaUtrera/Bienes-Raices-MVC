@@ -28,18 +28,18 @@ class LoginController{
                         // password incorrecto (mensaje de error)
                         $errores = Admin::getErrores();
                     }
-                
                 }
-                
             }
         }
-
         $router->render('auth/login', [
             'errores' => $errores,
         ]);
     }
 
     public static function logout(Router $router){
-        
+        session_start();
+        $_SESSION = [];
+
+        header('Location: /');
     }
 }
