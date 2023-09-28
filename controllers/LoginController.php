@@ -14,14 +14,21 @@ class LoginController{
             $errores = $auth->validar();
 
             if(empty($errores)){
-                //verificar si el usuario exite
+                //verificar si el usuario exite o no (mensaje de error)
                 $resultado = $auth->existeUsuario();
                 if(!$resultado){
                     $errores = Admin::getErrores();
                 }else{
                 //verificar el password
-
-                // autenticar el usuario
+                    $autenticado = $auth->comprobarPassword($resultado);
+                    if($autenticado){
+                        // autenticar el usuario
+                        $auth->autenticar();
+                    }else{
+                        // password incorrecto (mensaje de error)
+                        $errores = Admin::getErrores();
+                    }
+                
                 }
                 
             }
