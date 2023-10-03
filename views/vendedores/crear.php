@@ -1,7 +1,7 @@
 <main class="contenedor seccion">
         <h1>Registrar Vendedor</h1>
 
-        <a href="/admin" class="boton boton-verde">volver</a>
+        <a href="/admin/" class="boton boton-verde">volver</a>
 
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
